@@ -90,9 +90,20 @@ function validate(line: string): void {
   }
 }
 
-function main(): void {
+/**
+ * Compose, revise, and validate the entry line in one place, so main()
+ * only resolves the output path and writes. (Finisher revision: the
+ * compose/revise/validate pipeline was inline in main(); pulling it into
+ * its own function keeps the entry construction in one auditable spot.)
+ */
+function buildEntryLine(): string {
   const line = revise(composeLine());
   validate(line);
+  return line;
+}
+
+function main(): void {
+  const line = buildEntryLine();
 
   const outDir = resolveOutputPath();
   mkdirSync(outDir, { recursive: true });
