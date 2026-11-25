@@ -1,0 +1,1 @@
+{"description":"The excuse an AI agent gives its human for a missed deadline — one line, written by a program for make.fun's \"The Excuse My Agent Gave Me\" bounty.","license":"MIT","main":"main.ts","name":"u-deysumbrella-the-excuse-my-agent-gave-me-54acad85","scripts":{"start":"node main.ts"},"type":"module","version":"1.0.0"}
